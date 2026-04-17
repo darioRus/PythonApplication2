@@ -45,7 +45,8 @@ print("\n¿Desea agregar notas adicionales? (ej: errores de mods, requisitos de 
 game_notes = input("Notas: ") #preparar esta línea para que gestione textos más largos#
 
 #Pedir confirmación para generar el documento#
-
+#jjjjjjjjjjjjjjjjjjj#
+print()
 
 #Generar el archivo#
 
