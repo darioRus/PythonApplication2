@@ -2,29 +2,58 @@
 game_name = "empty"
 game_ver = 0
 game_saveFolder_location = "empty"
+game_notes = "empty"
+nombre_archivo_sav = "empty"
+
+
+confirm_save = []
 
 #control de bucle#
 confirm_info = []
 
-#Comienzo del programa#
+##Gestión de archivos##
+#Creación de arhivo#
+import os
+def generador_archivos(nombre_docuSave, nombreJuego, versionJuego, dlcsJuego, rutaSaves, notasDeJugador):
+    try:
+        #añade el .txt al final#
+        if not nombre_docuSave.endswith(".txt"):
+            nombre_docuSave += ".txt"
+
+        with open(nombre_docuSave, "w", encoding="utf-8") as f:
+            f.write (f"Título: {nombreJuego}\n")
+            f.write (f"Versión: {versionJuego}\n")
+            f.write (f"DLC(s): {dlcsJuego}\n")
+            f.write (f"Ruta de partidas guardadas: {rutaSaves}\n")
+            f.write (f"Notas del usuario: {notasDeJugador}\n")
+            f.write (f"-" *30 + "\n")
+            print(f"Archivo creado en: {os.getcwd()}\\{nombre_docuSave}\n")
+    except PermissionError:
+        print("error inesperado")
+        pass
+
+
+#limpieza de datos en consola#
+def limpiar_pantalla():
+    print("\033[H\033[J", end="")
+
+#####Comienzo del programa#####
 print ("GAME DATA MANAGER iniciado: ")
 while confirm_info != "S":
+    game_dlcs = []
+
     print ("Ingrese el nombre del juego: ")
     game_name = input ()
-    
+
     print ("Ingrese la versión del juego: ")
     game_ver = input ()
-    
-    #este debe permitirme generar otros espacios de memoria por si hay más de un DLC#
-    game_dlcs = []
+
     while True:
             dlc = input("Ingrese el nombre del DLC (o escriba 'fin' para terminar, 'no tiene' si no hay): ")
             if dlc.lower() == 'fin' or dlc.lower() == 'no tiene':
                     break
             else:
                 game_dlcs.append(dlc)
-
-    #En este punto consultar si se quiere añadir otro y repetir la operación#
     
     print ("Ingrese La ruta del save/data del juego: ")
     game_saveFolder_location = input ()
@@ -39,12 +68,21 @@ while confirm_info != "S":
     if confirm_info == "S":
         break
     
-
+limpiar_pantalla()
 #Añadir anotación final#
 print("\n¿Desea agregar notas adicionales? (ej: errores de mods, requisitos de hardware, etc.)")
-game_notes = input("Notas: ") #preparar esta línea para que gestione textos más largos#
+game_notes = input("Notas: ")   #AÑADIR CONDICION (SI USUARIO NO QUIERE AÑADIR NOTA)#
+                                
 
-#Pedir confirmación para generar el documento#
+#Pedir confirmación para generar el documento# 
+confirm_save = input("Desea generar un archivo .txt con la información?:...(S - generar archivo/N - salir sin guardar) \n").upper()
+if confirm_save == "S":
+    nombre_archivo_sav = input("Ingrese el título del proyecto: \n")
+    generador_archivos(nombre_archivo_sav, game_name, game_ver, game_dlcs, game_saveFolder_location, game_notes)
+else:
+    print ("seliendo sin guardar. \n")
+    
 
-#Generar el archivo#
 
+
+                                                                                                
