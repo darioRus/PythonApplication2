@@ -1,0 +1,6 @@
+Título: counter-strike
+Versión: 1.6
+DLC(s): ['dlc1', 'dlc2', 'dlc3']
+Ruta de partidas guardadas: save test añadido
+Notas del usuario: None
+------------------------------

@@ -1,0 +1,6 @@
+Título: half life
+Versión: 1.4
+DLC(s): ['dlc1', 'dlc2']
+Ruta de partidas guardadas: save testing charming
+Notas del usuario: None
+------------------------------
