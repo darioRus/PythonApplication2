@@ -1,0 +1,6 @@
+Título: gametest1
+Versión: 2.4
+DLC(s): dlc1, dlc2, dlc34
+Ruta de partidas guardadas: sssss
+Notas del usuario: None
+------------------------------

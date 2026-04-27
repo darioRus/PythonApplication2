@@ -1,0 +1,6 @@
+Título: halo
+Versión: 2.45
+DLC(s): ['dlc1', 'dlc2']
+Ruta de partidas guardadas: save data test
+Notas del usuario: None
+------------------------------

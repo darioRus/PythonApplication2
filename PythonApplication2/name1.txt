@@ -1,0 +1,6 @@
+Título: eqewq
+Versión: 23
+DLC(s): ['ddd', 'sss', 'aaa']
+Ruta de partidas guardadas: s
+Notas del usuario: None
+------------------------------

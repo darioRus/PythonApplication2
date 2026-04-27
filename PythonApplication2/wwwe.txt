@@ -1,0 +1,6 @@
+Título: dadada
+Versión: 231
+DLC(s): ['qwe', 'fds']
+Ruta de partidas guardadas: ssss
+Notas del usuario: None
+------------------------------

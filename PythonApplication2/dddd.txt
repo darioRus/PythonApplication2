@@ -1,6 +1,6 @@
-Título: jfsjd
-Versión: 4243
-DLC(s): ['ffdsf', 'fsdfs', 'rewrwe']
-Ruta de partidas guardadas: ssssss
+Título: sa
+Versión: 123
+DLC(s): d1, d12
+Ruta de partidas guardadas: sav
 Notas del usuario: None
 ------------------------------

@@ -1,0 +1,6 @@
+Título: kakak
+Versión: 3232
+DLC(s): ['dlc1', 'dlc2']
+Ruta de partidas guardadas: ssss
+Notas del usuario: None
+------------------------------

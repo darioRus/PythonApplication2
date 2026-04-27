@@ -1,0 +1,6 @@
+Título: dasda
+Versión: 333
+DLC(s): ['rwer', 'fdsfds']
+Ruta de partidas guardadas: ssss
+Notas del usuario: dadsada
+------------------------------

@@ -1,0 +1,6 @@
+Título: fear
+Versión: 22
+DLC(s): ['ee', 'rr']
+Ruta de partidas guardadas: ssss
+Notas del usuario: None
+------------------------------

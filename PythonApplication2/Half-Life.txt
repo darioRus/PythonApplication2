@@ -1,0 +1,6 @@
+Título: Half-Life
+Versión: 1.6
+DLC(s): ['dlc1', 'dlc2']
+Ruta de partidas guardadas: test ruta
+Notas del usuario: None
+------------------------------
