@@ -10,6 +10,7 @@ yesNote = ""
 confirm_save = []
 confirm_info = []
 create_read_delete = ""
+nueva_info = ""
 
 def generador_archivos(nombre_docuSave, base_data_games):
     try:
@@ -103,8 +104,28 @@ def lectura_documento():
     except FileNotFoundError:
         return "Error: documento no encontrado..."
 
-def añadir_info_documento():
-    pass                                #CONTINUAR#
+def add_info_documento(nombre_archivo_sav, nueva_info):
+    nombre_archivo_sav = input("Ingrese el nombre del documento a modificar:\n")
+    if not nombre_archivo_sav.endswith(".txt"):
+        nombre_archivo_sav += ".txt"
+
+    try:
+        # Verificamos si el archivo existe para no crear uno vacío por error
+        if not os.path.exists(nombre_archivo_sav):
+            print(f"⚠️ Error: El archivo '{nombre_archivo_sav}' no existe.") #El progrma salta siempre acá--------------
+            return
+
+        nueva_info = input("ingrese la nueva información:\n")
+        # Abrimos en modo 'a' (Append)
+        with open(nombre_archivo_sav, "a", encoding="utf-8") as archivo:
+            archivo.write("\n" + "="*30 + "\n") # Separador visual
+            archivo.write(f"ENTRADA ADICIONAL - {nueva_info}\n")
+            archivo.write("="*30 + "\n")
+            
+        print(f"✅ Información añadida con éxito a {nombre_archivo_sav}")
+
+    except Exception as e:
+        print(f"❌ Error crítico al intentar escribir: {e}")
 
 def listar_archivos():
     archivos = [files for files in os.listdir() if files.endswith(".txt")]
@@ -115,15 +136,15 @@ def listar_archivos():
     else:
         print("No se encontraron registros.")
 
-def borrado_documento(nombre_archivo):
-    nombre_archivo = input("Ingrese el nombre del documento:\n")
-    if not nombre_archivo.endswith(".txt"):
-        nombre_archivo += ".txt"
+def borrado_documento(nombre_archivo_sav):
+    nombre_archivo_sav = input("Ingrese el nombre del documento:\n")
+    if not nombre_archivo_sav.endswith(".txt"):
+        nombre_archivo_sav += ".txt"
     
-    if os.path.exists(nombre_archivo):
-        eliminar = input(f"¿Desea borrar el documento {nombre_archivo}? (S/N):\n").upper()
+    if os.path.exists(nombre_archivo_sav):
+        eliminar = input(f"¿Desea borrar el documento {nombre_archivo_sav}? (S/N):\n").upper()
         if eliminar == "S":
-            os.remove(nombre_archivo)
+            os.remove(nombre_archivo_sav)
             print("Documento removido...")
         else:
             print("Borrado CANCELADO")
@@ -151,7 +172,7 @@ if __name__ == "__main__":
             input("\nPresiona Enter para volver al menú...")
 
         elif create_read_delete == "añadir":
-            añadir_info_documento()
+            add_info_documento(nombre_archivo_sav, nueva_info)
 
         elif create_read_delete == "borrar":
             borrado_documento(nombre_archivo_sav)

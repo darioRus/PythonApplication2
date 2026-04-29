@@ -1,6 +1,0 @@
-Título: creationtest
-Versión: 12
-DLC(s): d1, d2
-Ruta de partidas guardadas: save
-Notas del usuario: None
-------------------------------
